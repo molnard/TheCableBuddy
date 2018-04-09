@@ -6,18 +6,18 @@ typedef enum pinstate
   PINSTATE_HIGH,
   PINSTATE_FLOAT,
   PINSTATE_CONNECTED
-};
+}a;
 
-#define lineSize 11
+#define lineSize 14
 
 typedef struct line
 {
   int pin; //like A0
   pinstate state[lineSize];
-};
+}b;
 
-#define PLED 3
-#define PBUTTON 2
+#define PLED A2
+#define PBUTTON A4
 
 void setup() {
   // put your setup code here, to run once:
@@ -87,17 +87,20 @@ static line goodMatrix[lineSize];
 void loop() {
   Serial.println("pincheck started");
   line lines[lineSize];
-  lines[0].pin = 8;
-  lines[1].pin = 9;
-  lines[2].pin = 10;
-  lines[3].pin = 11;
-  lines[4].pin = 12;
-  lines[5].pin = A0;
-  lines[6].pin = A1;
-  lines[7].pin = A2;
-  lines[8].pin = A3;
-  lines[9].pin = A4;
-  lines[10].pin = A5;
+  lines[0].pin = 2;
+  lines[1].pin = 3;
+  lines[2].pin = 4;
+  lines[3].pin = 5;
+  lines[4].pin = 6;
+  lines[5].pin = 7;
+  lines[6].pin = 8;
+  lines[7].pin = 9;
+  lines[8].pin = 10;
+  lines[9].pin = 11;
+  lines[10].pin = 12;
+  lines[11].pin = A2;
+  lines[12].pin = A1;
+  lines[13].pin = A0;
 
   if (!digitalRead(PBUTTON))
   {
